@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  heroes-of-valor:
+    build: .
+    container_name: heroes-of-valor-server
+    ports:
+      - "27015:27015/udp"
+    volumes:
+      - ./server:/home/valor/server
+      - ./config:/home/valor/config
+    restart: unless-stopped
